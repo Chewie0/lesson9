@@ -1,0 +1,6 @@
+---
+# defaults file for java_app
+war_folder: /test/target/wwp-1.0.0.war
+repo_url: https://github.com/koddas/war-web-project.git
+repo_folder: /test/
+tmp_fold: /tmp/

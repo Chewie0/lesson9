@@ -1,0 +1,4 @@
+---
+# defaults file for web
+tmp_dir: /tmp/wwp-1.0.0.war
+tomcat_dir: /var/lib/tomcat9/webapps  

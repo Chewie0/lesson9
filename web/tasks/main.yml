@@ -1,0 +1,12 @@
+---
+# tasks file for web
+- name: install packages
+  apt: name={{item}} state=present
+  with_items:
+       - default-jdk
+       - tomcat9
+
+- name: copy file
+  synchronize: 
+    src: "{{tmp_dir}}"
+    dest: "{{tomcat_dir}}" 

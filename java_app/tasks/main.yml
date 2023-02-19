@@ -1,0 +1,24 @@
+---
+# tasks file for java_app
+- name: install packages
+  apt: name={{item}} state=present
+  with_items:
+       - maven
+       - git
+
+- name: git clone 
+  git:
+    repo: "{{repo_url}}"
+    dest: "{{repo_folder}}"          
+    clone: yes
+- name: running maven
+  shell:
+    cmd: "mvn -f pom.xml package"
+    chdir: "{{repo_folder}}" 
+- name: copy war
+  synchronize:
+    mode: pull 
+    src: "{{war_folder}}"
+    dest: "{{tmp_fold}}"
+    
+
